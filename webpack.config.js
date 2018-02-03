@@ -24,7 +24,8 @@ module.exports = {
         root: __dirname,
         modulesDirectories: [
             'node_modules',
-            './app/components'
+            './app/components',
+            './app/api'
         ], //ezzel mondom meg, hogy honnan keresse a komponenseket, modulokat, igy nem kell az alias
         alias: {
             applicationStyles: 'app/styles/app.scss'
