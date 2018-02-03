@@ -13,13 +13,13 @@ var ToDoApp = React.createClass({
                     text: "Kettes sss"
                 }
             ]
-        }
+        };
     },
     render: function () {
         var {todos} = this.state;
         return (
             <div>
-                <ToDoList todos={todos}></ToDoList>
+                <ToDoList todos={todos}/>
             </div>
         )
     }
