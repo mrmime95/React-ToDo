@@ -37,18 +37,18 @@ var TodoApp = React.createClass({
     },
 
     handleToggel: function (id) {
-      var tempTodos = this.state.todos.map((todo)=>{
-          if(todo.id === id)
-              todo.completed = !todo.completed;
-          if(todo.completed)
-              todo.completedAt = moment().format("YYYY-MM-DD ddd HH:mm:ss")
-          else
-              todo.completedAt = '';
-          return todo;
-      });
-      this.setState({
-          todos: tempTodos
-      })
+        var tempTodos = this.state.todos.map((todo)=>{
+            if(todo.id === id)
+                todo.completed = !todo.completed;
+            if(todo.completed)
+                todo.completedAt = moment().format("YYYY-MM-DD ddd HH:mm:ss")
+            else
+                todo.completedAt = '';
+            return todo;
+        });
+        this.setState({
+            todos: tempTodos
+        })
     },
 
     handleSearch: function (showCompleted, searchText) {
@@ -63,9 +63,16 @@ var TodoApp = React.createClass({
         var filterTodo = TodoAPI.filterTodos(todos, showCompleted, searchText);
         return (
             <div>
-                <TodoSearch onSearch={this.handleSearch}/>
-                <TodoList todos={filterTodo} onToggle={this.handleToggel}/>
-                <AddTodo onAddTodo={this.handleAddTodo}/>
+                <h1 className="page-title">Todo App</h1>
+                <div className="row">
+                    <div className="column small-centered small-11 medium-6 large-5">
+                        <div className="container">
+                            <TodoSearch onSearch={this.handleSearch}/>
+                            <TodoList todos={filterTodo} onToggle={this.handleToggel}/>
+                            <AddTodo onAddTodo={this.handleAddTodo}/>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
