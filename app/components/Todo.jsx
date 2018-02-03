@@ -1,6 +1,6 @@
 var React = require('react');
 
-var ToDo = React.createClass({
+var Todo = React.createClass({
     render: function () {
         var {id, text} = this.props;
         return (
@@ -11,4 +11,4 @@ var ToDo = React.createClass({
     }
 });
 
-module.exports = ToDo;
+module.exports = Todo;

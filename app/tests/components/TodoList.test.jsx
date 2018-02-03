@@ -4,12 +4,12 @@ var TestUtils = require("react-addons-test-utils");
 var expect = require("expect");
 var $ = require("jquery");
 
-var ToDoList = require("ToDoList");
-var ToDo = require("ToDo");
+var TodoList = require("TodoList");
+var Todo = require("Todo");
 
-describe('ToDoList', () => {
+describe('TodoList', () => {
     it('should exist', () =>{
-        expect(ToDoList).toExist();
+        expect(TodoList).toExist();
     });
 
     it('should render one Todo component for each todo item', () => {
@@ -22,8 +22,8 @@ describe('ToDoList', () => {
                 text: "two"
             }
         ];
-        var toDoList = TestUtils.renderIntoDocument(<ToDoList todos={todos}/>);
-        var todosComponents = TestUtils.scryRenderedComponentsWithType(toDoList, ToDo);
+        var todoList = TestUtils.renderIntoDocument(<TodoList todos={todos}/>);
+        var todosComponents = TestUtils.scryRenderedComponentsWithType(todoList, Todo);
 
         expect(todosComponents.length).toBe(todos.length);
     });
